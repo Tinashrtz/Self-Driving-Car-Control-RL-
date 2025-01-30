@@ -1,0 +1,2079 @@
+#VRML_SIM R2023b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/road/protos/StraightRoadSegment.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/road/protos/RoadLine.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/vehicles/protos/lincoln/LincolnMKZ.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/devices/ibeo/protos/IbeoLux.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/traffic/protos/TrafficCone.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/traffic/protos/HighwayPole.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/traffic/protos/HighwaySign.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/geometries/protos/Extrusion.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/trees/protos/Forest.proto"
+IMPORTABLE EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/vehicles/protos/bmw/BmwX5Simple.proto"
+IMPORTABLE EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/vehicles/protos/citroen/CitroenCZeroSimple.proto"
+IMPORTABLE EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/vehicles/protos/toyota/ToyotaPriusSimple.proto"
+IMPORTABLE EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/vehicles/protos/lincoln/LincolnMKZSimple.proto"
+IMPORTABLE EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/vehicles/protos/range_rover/RangeRoverSportSVRSimple.proto"
+IMPORTABLE EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/vehicles/protos/tesla/TeslaModel3Simple.proto"
+IMPORTABLE EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/vehicles/protos/mercedes_benz/MercedesBenzSprinterSimple.proto"
+IMPORTABLE EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/vehicles/protos/generic/BusSimple.proto"
+IMPORTABLE EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/vehicles/protos/generic/TruckSimple.proto"
+IMPORTABLE EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/vehicles/protos/generic/TruckTrailerSimple.proto"
+IMPORTABLE EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/vehicles/protos/generic/TruckTankSimple.proto"
+IMPORTABLE EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/vehicles/protos/generic/ScooterSimple.proto"
+IMPORTABLE EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/vehicles/protos/generic/ScooterDriver.proto"
+IMPORTABLE EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/vehicles/protos/generic/MotorbikeSimple.proto"
+IMPORTABLE EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/vehicles/protos/generic/MotorbikeDriver.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/traffic/protos/WorkBarrier.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/traffic/protos/DivergentIndicator.proto"
+
+WorldInfo {
+  info [
+    "Autonomous Vehicle Simulation"
+    "The main vehicle uses distance-sensors and a front radar in order to overtake the other vehicles controlled by SUMO."
+  ]
+  title "Highway overtake"
+  ERP 0.6
+  basicTimeStep 10
+  lineScale 1
+  contactProperties [
+    ContactProperties {
+      coulombFriction [
+        8
+      ]
+      softCFM 1e-05
+      bumpSound ""
+      rollSound ""
+      slideSound ""
+    }
+    ContactProperties {
+      material2 "CitroenCZeroWheels"
+      coulombFriction [
+        8
+      ]
+      softCFM 1e-05
+      bumpSound ""
+      rollSound ""
+      slideSound ""
+    }
+    ContactProperties {
+      material2 "ToyotaPriusWheels"
+      coulombFriction [
+        8
+      ]
+      softCFM 1e-05
+      bumpSound ""
+      rollSound ""
+      slideSound ""
+    }
+    ContactProperties {
+      material2 "LincolnMKZWheels"
+      coulombFriction [
+        8
+      ]
+      softCFM 1e-05
+      bumpSound ""
+      rollSound ""
+      slideSound ""
+    }
+    ContactProperties {
+      material2 "RangeRoverSportSVRWheels"
+      coulombFriction [
+        8
+      ]
+      softCFM 1e-05
+      bumpSound ""
+      rollSound ""
+      slideSound ""
+    }
+    ContactProperties {
+      material2 "TruckWheels"
+      coulombFriction [
+        8
+      ]
+      softCFM 1e-05
+      bumpSound ""
+      rollSound ""
+      slideSound ""
+    }
+  ]
+}
+Viewpoint {
+  fieldOfView 0.6
+  orientation -0.0270568442282158 -0.15685543581259742 0.9872508796838066 3.5937125773002614
+  position 2.205317466325516 22.911774471513837 9.199109356244858
+  near 1
+  follow "vehicle"
+  followSmoothness 0
+  lensFlare LensFlare {
+  }
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+Fog {
+  color 0.93 0.96 1
+  visibilityRange 500
+}
+DivergentIndicator {
+  translation -310.81 6.91 0
+  height 2
+  radius 1.3
+}
+DEF FLOOR Solid {
+  boundingObject Plane {
+  }
+}
+StraightRoadSegment {
+  translation 0 8.75 0.01
+  rotation 0 0 1 3.1415926535
+  id "0"
+  width 15
+  numberOfLanes 4
+  numberOfForwardLanes 4
+  lines [
+    RoadLine {
+      type "continuous"
+      width 0.25
+    }
+  ]
+  rightBorder FALSE
+  leftBorder FALSE
+  rightBarrier TRUE
+  leftBarrier TRUE
+  length 5000
+}
+MotorbikeSimple {
+  translation -265.99 10.34 0.25
+  rotation 0 0 1 3.14159
+  name "vehicle(2)"
+  wheelBoundingObject TRUE
+}
+TrafficCone {
+  translation -164.88 5.59 0
+  name "traffic cone(3)"
+}
+TrafficCone {
+  translation -163.37 6.56 0
+  name "traffic cone(4)"
+}
+TrafficCone {
+  translation -161.16 7.27 0
+  name "traffic cone(5)"
+}
+StraightRoadSegment {
+  translation -5000 -8.75 0.01
+  name "road(1)"
+  id "1"
+  width 15
+  numberOfLanes 4
+  numberOfForwardLanes 4
+  lines [
+    RoadLine {
+      type "continuous"
+      width 0.25
+    }
+  ]
+  rightBorder FALSE
+  leftBorder FALSE
+  rightBarrier TRUE
+  leftBarrier TRUE
+  length 5000
+}
+DEF WEBOTS_VEHICLE0 LincolnMKZ {
+  translation -25.91215285192695 6.774522094571057 0.30124904393352225
+  rotation 0.0027416225564703893 -1.9418749694974733e-05 0.999996241557272 -3.14107757933914
+  controller "highway_overtake"
+  sensorsSlotFront [
+    Emitter {
+      channel 1
+    }
+    Receiver {
+      channel 2
+    }
+    DEF FRONT_RIGHT_LIDAR IbeoLux {
+      translation -0.225167 0.71 0
+      rotation 0 0 1 0.785398
+      name "ibeo 1"
+      useExtendedFieldOfView TRUE
+    }
+    DEF FRONT_LEFT_LIDAR IbeoLux {
+      translation -0.225 -0.71 0
+      rotation 0 0 -1 0.819204
+      name "ibeo 2"
+      useExtendedFieldOfView TRUE
+    }
+    DEF FRONT DistanceSensor {
+      translation -0.14 0 0.3
+      name "distance sensor front"
+      lookupTable [
+        0 0 0
+        20 20 0
+      ]
+      numberOfRays 2
+      aperture 0.1
+    }
+    DEF FRONT_RIGHT_0 DistanceSensor {
+      translation -0.292861 0.645126 0.3
+      rotation 0 0 1 0.130899
+      name "distance sensor front right 0"
+      lookupTable [
+        0 0 0
+        20 20 0
+      ]
+      numberOfRays 2
+      aperture 0.1
+    }
+    DEF FRONT_RIGHT_1 DistanceSensor {
+      translation -0.292861 0.645126 0.3
+      rotation 0 0 1 0.261799
+      name "distance sensor front right 1"
+      lookupTable [
+        0 0 0
+        15 15 0
+      ]
+      numberOfRays 2
+      aperture 0.1
+    }
+    DEF FRONT_RIGHT_2 DistanceSensor {
+      translation -0.292861 0.645126 0.3
+      rotation 0 0 1 0.392699
+      name "distance sensor front right 2"
+      lookupTable [
+        0 0 0
+        10 10 0
+      ]
+      numberOfRays 2
+      aperture 0.1
+    }
+    DEF FRONT_LEFT_0 DistanceSensor {
+      translation -0.284201 -0.650126 0.3
+      rotation 0 0 -1 0.130901
+      name "distance sensor front left 0"
+      lookupTable [
+        0 0 0
+        20 20 0
+      ]
+      numberOfRays 2
+      aperture 0.1
+    }
+    DEF FRONT_LEFT_1 DistanceSensor {
+      translation -0.284201 -0.650126 0.3
+      rotation 0 0 -1 0.2618007196
+      name "distance sensor front left 1"
+      lookupTable [
+        0 0 0
+        15 15 0
+      ]
+      numberOfRays 2
+      aperture 0.1
+    }
+    DEF FRONT_LEFT_2 DistanceSensor {
+      translation -0.284201 -0.650126 0.3
+      rotation 0 0 -1 0.3927007196
+      name "distance sensor front left 2"
+      lookupTable [
+        0 0 0
+        10 10 0
+      ]
+      numberOfRays 2
+      aperture 0.1
+    }
+  ]
+  sensorsSlotRear [
+    DEF REAR DistanceSensor {
+      translation 0 0 0.3
+      name "distance sensor rear"
+      lookupTable [
+        0 0 0
+        10 10 0
+      ]
+      numberOfRays 2
+      aperture 0.2
+    }
+    DEF REAR_LEFT DistanceSensor {
+      translation -0.188938 0.705126 0.3
+      rotation 0 0 1 0.523599
+      name "distance sensor rear left"
+      lookupTable [
+        0 0 0
+        10 10 0
+      ]
+      numberOfRays 2
+      aperture 0.2
+    }
+    DEF REAR_RIGHT DistanceSensor {
+      translation -0.188938 -0.705126 0.3
+      rotation 0 0 -1 0.5235988268
+      name "distance sensor rear right"
+      lookupTable [
+        0 0 0
+        10 10 0
+      ]
+      numberOfRays 2
+      aperture 0.2
+    }
+    DEF REAR_LEFT_LIDAR IbeoLux {
+      translation -0.164545 0.745 0
+      rotation 0 0 1 0.721593
+      name "ibeo 3"
+      useExtendedFieldOfView TRUE
+    }
+    DEF REAR_RIGHT_LIDAR IbeoLux {
+      translation -0.189857 -0.75851 0
+      rotation 0 0 1 -0.7915953071795858
+      name "ibeo 4"
+      useExtendedFieldOfView TRUE
+    }
+  ]
+  sensorsSlotTop [
+    DEF TOP_CAMERA Camera {
+      translation 0.48 0 0
+      width 512
+      height 256
+      near 1
+      far 1000
+      motionBlur 200
+      recognition Recognition {
+      }
+      lensFlare LensFlare {
+      }
+    }
+  ]
+  sensorsSlotCenter [
+    DEF RIGHT DistanceSensor {
+      translation 1.32 -0.9 0.3
+      rotation 0 0 1 -1.5708
+      name "distance sensor right"
+      lookupTable [
+        0 0 0
+        4 4 0
+      ]
+      numberOfRays 2
+      aperture 0.9
+    }
+    DEF LEFT DistanceSensor {
+      translation 1.32 0.9 0.3
+      rotation 0 0 1 1.5708
+      name "distance sensor left"
+      lookupTable [
+        0 0 0
+        4 4 0
+      ]
+      numberOfRays 2
+      aperture 0.9
+    }
+    GPS {
+      translation 5.03 0 0
+      rotation 0 0 1 3.14159
+    }
+  ]
+}
+DEF INVISIBLE_SUPERVISOR Robot {
+    translation 0.11 0 0
+    children [
+      Emitter {
+        channel 2
+      }
+      Receiver {
+        channel 1
+      }
+      DEF radar Radar {
+        maxRange 60
+        horizontalFieldOfView 0.9
+        verticalFieldOfView 0.07854
+        minRadialSpeed -100
+        maxRadialSpeed 40
+        cellDistance 2
+        rangeNoise 0.25
+        speedNoise 0.12
+        angularNoise 0.001
+        frequency 76.5
+        transmittedPower 31
+        minDetectableSignal -80
+        occlusion TRUE
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0 0.0117647
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 5 2.5 2
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8939062711747167 0 0.10609372882528334
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 5 2.5 2
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0 0.0117647
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 5 2.5 2
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0 0.0117647
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 5 2.5 2
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0 0.0117647
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 5 2.5 2
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0 0.0117647
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 5 2.5 2
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0 0.0117647
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 5 2.5 2
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0 0.0117647
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 5 2.5 2
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0 0.0117647
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 5 2.5 2
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0 0.0117647
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 5 2.5 2
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0 0.0117647
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 5 2.5 2
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0 0.0117647
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 5 2.5 2
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0 0.0117647
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 5 2.5 2
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0 0.0117647
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 5 2.5 2
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0 0.0117647
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 5 2.5 2
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0 0.0117647
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 5 2.5 2
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0 0.0117647
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 5 2.5 2
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0 0.0117647
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 5 2.5 2
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0 0.0117647
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 5 2.5 2
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0 0.0117647
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 5 2.5 2
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0 0.0117647
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 5 2.5 2
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0 0.0117647
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 5 2.5 2
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0 0.0117647
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 5 2.5 2
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0 0.0117647
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 5 2.5 2
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0 0.0117647
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 5 2.5 2
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0 0.0117647
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 5 2.5 2
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.783785847838163 0 0.21621415216183704
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 3 1 2
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0 0.0117647
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 5 2.5 2
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0 0.0117647
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 5 2.5 2
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0 0.0117647
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 5 2.5 2
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0 0.0117647
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 5 2.5 2
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0 0.0117647
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 5 2.5 2
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0 0.0117647
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 5 2.5 2
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0 0.0117647
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 5 2.5 2
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0 0.0117647
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 5 2.5 2
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0 0.0117647
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 5 2.5 2
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0 0.0117647
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 5 2.5 2
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0 0.0117647
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 5 2.5 2
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0 0.0117647
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 5 2.5 2
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0 0.0117647
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 5 2.5 2
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0 0.0117647
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 5 2.5 2
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0 0.0117647
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 5 2.5 2
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0 0.0117647
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 5 2.5 2
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0 0.0117647
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 5 2.5 2
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0 0.0117647
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 5 2.5 2
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0 0.0117647
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 5 2.5 2
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0 0.0117647
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 5 2.5 2
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0 0.0117647
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 5 2.5 2
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0 0.0117647
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 5 2.5 2
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0 0.0117647
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 5 2.5 2
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0 0.0117647
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 5 2.5 2
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0 0.0117647
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 5 2.5 2
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0 0.0117647
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 5 2.5 2
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0 0.0117647
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 5 2.5 2
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0 0.0117647
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 5 2.5 2
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0 0.0117647
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 5 2.5 2
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0 0.0117647
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 5 2.5 2
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0 0.0117647
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 5 2.5 2
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0 0.0117647
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 5 2.5 2
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0 0.0117647
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 5 2.5 2
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0 0.0117647
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 5 2.5 2
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0 0.0117647
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 5 2.5 2
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0 0.0117647
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 5 2.5 2
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0 0.0117647
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 5 2.5 2
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0 0.0117647
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 5 2.5 2
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0 0.0117647
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 5 2.5 2
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0 0.0117647
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 5 2.5 2
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0 0.0117647
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 5 2.5 2
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0 0.0117647
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 5 2.5 2
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0 0.0117647
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 5 2.5 2
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0 0.0117647
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 5 2.5 2
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0 0.0117647
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 5 2.5 2
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0 0.0117647
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 5 2.5 2
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0 0.0117647
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 5 2.5 2
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 -10
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0 0.0117647
+                transparency 0.7
+              }
+            }
+            geometry Box {
+              size 5 2.5 2
+            }
+          }
+        ]
+      }
+    ]
+    controller "supervisor_controller"
+    supervisor TRUE
+  }
+DEF WEBOTS_VEHICLE1 RangeRoverSportSVRSimple {
+  translation -130.46564 10.421444 0.4
+  rotation 0 0 1 2.87979
+  name "vehicle(1)"
+}
+TrafficCone {
+  translation -118.18033 12.182304 0
+  rotation 0 0 -1 4.9741884
+}
+WorkBarrier {
+  translation -71.24 3.18 0
+  rotation 0 0 1 -0.261795307179586
+}
+WorkBarrier {
+  translation -165.134 3.6895 0
+  rotation 0 0 1 4.07987e-06
+  name "work barrier(2)"
+}
+WorkBarrier {
+  translation -158.473 5.70861 0
+  rotation 0 0 1 0.785402
+  name "work barrier(3)"
+}
+WorkBarrier {
+  translation -70.8122 4.77381 0
+  rotation 0 0 1 -0.261795307179586
+  name "work barrier(1)"
+}
+TrafficCone {
+  translation -127.19847 9.4738171 0
+  name "traffic cone(1)"
+}
+TrafficCone {
+  translation -122.40328 10.584217 0
+  name "traffic cone(2)"
+}
+DEF WEBOTS_VEHICLE2 Solid {
+  translation -114.07405 10.36436 0
+  name "solid(1)"
+}
+HighwayPole {
+  translation -215 16 0
+  stand 2
+  height 7
+  length 31
+  thickness 0.35
+  curveRadius 0.5
+  rightHorizontalSigns [
+    HighwaySign {
+      translation 0 -5.35 0
+      texture [
+        "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/traffic/protos/textures/highway_sign_bayonne.jpg"
+      ]
+    }
+  ]
+  rightVerticalSigns [
+    HighwaySign {
+      translation 0 0 0.66
+      name "highway sign(1)"
+      height 1.7
+      length 3.5
+      texture [
+        "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/traffic/protos/textures/highway_sign_sebastian.jpg"
+      ]
+    }
+  ]
+  leftHorizontalSigns [
+    HighwaySign {
+      translation 0 17.5 0
+      name "highway sign(2)"
+      height 3.5
+      texture [
+        "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/traffic/protos/textures/highway_sign_bayonne.jpg"
+      ]
+    }
+  ]
+  leftVerticalSigns [
+    HighwaySign {
+      translation 0 0 0.66
+      name "highway sign(3)"
+      height 1.7
+      length 3.5
+      texture [
+        "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/traffic/protos/textures/highway_sign_sebastian.jpg"
+      ]
+    }
+  ]
+}
+HighwayPole {
+  translation -600 16 0
+  name "highway pole(1)"
+  stand 2
+  height 7
+  length 31
+  thickness 0.35
+  curveRadius 0.5
+  rightHorizontalSigns [
+    HighwaySign {
+      translation 0 -5.35 0
+      texture [
+        "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/traffic/protos/textures/highway_sign_bayonne.jpg"
+      ]
+    }
+  ]
+  rightVerticalSigns [
+    HighwaySign {
+      translation 0 0 0.66
+      name "highway sign(1)"
+      height 1.7
+      length 3.5
+      texture [
+        "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/traffic/protos/textures/highway_sign_sebastian.jpg"
+      ]
+    }
+  ]
+  leftHorizontalSigns [
+    HighwaySign {
+      translation 0 17.5 0
+      name "highway sign(2)"
+      height 3.5
+      texture [
+        "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/traffic/protos/textures/highway_sign_bayonne.jpg"
+      ]
+    }
+  ]
+  leftVerticalSigns [
+    HighwaySign {
+      translation 0 0 0.66
+      name "highway sign(3)"
+      height 1.7
+      length 3.5
+      texture [
+        "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/traffic/protos/textures/highway_sign_sebastian.jpg"
+      ]
+    }
+  ]
+}
+HighwayPole {
+  translation -1000 16 0
+  name "highway pole(2)"
+  stand 2
+  height 7
+  length 31
+  thickness 0.35
+  curveRadius 0.5
+  rightHorizontalSigns [
+    HighwaySign {
+      translation 0 -5.35 0
+      texture [
+        "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/traffic/protos/textures/highway_sign_bayonne.jpg"
+      ]
+    }
+  ]
+  rightVerticalSigns [
+    HighwaySign {
+      translation 0 0 0.66
+      name "highway sign(1)"
+      height 1.7
+      length 3.5
+      texture [
+        "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/traffic/protos/textures/highway_sign_sebastian.jpg"
+      ]
+    }
+  ]
+  leftHorizontalSigns [
+    HighwaySign {
+      translation 0 17.5 0
+      name "highway sign(2)"
+      height 3.5
+      texture [
+        "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/traffic/protos/textures/highway_sign_bayonne.jpg"
+      ]
+    }
+  ]
+  leftVerticalSigns [
+    HighwaySign {
+      translation 0 0 0.66
+      name "highway sign(3)"
+      height 1.7
+      length 3.5
+      texture [
+        "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/traffic/protos/textures/highway_sign_sebastian.jpg"
+      ]
+    }
+  ]
+}
+HighwayPole {
+  translation -1400 16 0
+  name "highway pole(3)"
+  stand 2
+  height 7
+  length 31
+  thickness 0.35
+  curveRadius 0.5
+  rightHorizontalSigns [
+    HighwaySign {
+      translation 0 -5.35 0
+      texture [
+        "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/traffic/protos/textures/highway_sign_bayonne.jpg"
+      ]
+    }
+  ]
+  rightVerticalSigns [
+    HighwaySign {
+      translation 0 0 0.66
+      name "highway sign(1)"
+      height 1.7
+      length 3.5
+      texture [
+        "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/traffic/protos/textures/highway_sign_sebastian.jpg"
+      ]
+    }
+  ]
+  leftHorizontalSigns [
+    HighwaySign {
+      translation 0 17.5 0
+      name "highway sign(2)"
+      height 3.5
+      texture [
+        "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/traffic/protos/textures/highway_sign_bayonne.jpg"
+      ]
+    }
+  ]
+  leftVerticalSigns [
+    HighwaySign {
+      translation 0 0 0.66
+      name "highway sign(3)"
+      height 1.7
+      length 3.5
+      texture [
+        "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/traffic/protos/textures/highway_sign_sebastian.jpg"
+      ]
+    }
+  ]
+}
+HighwayPole {
+  translation -1800 16 0
+  name "highway pole(4)"
+  stand 2
+  height 7
+  length 31
+  thickness 0.35
+  curveRadius 0.5
+  rightHorizontalSigns [
+    HighwaySign {
+      translation 0 -5.35 0
+      texture [
+        "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/traffic/protos/textures/highway_sign_bayonne.jpg"
+      ]
+    }
+  ]
+  rightVerticalSigns [
+    HighwaySign {
+      translation 0 0 0.66
+      name "highway sign(1)"
+      height 1.7
+      length 3.5
+      texture [
+        "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/traffic/protos/textures/highway_sign_sebastian.jpg"
+      ]
+    }
+  ]
+  leftHorizontalSigns [
+    HighwaySign {
+      translation 0 17.5 0
+      name "highway sign(2)"
+      height 3.5
+      texture [
+        "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/traffic/protos/textures/highway_sign_bayonne.jpg"
+      ]
+    }
+  ]
+  leftVerticalSigns [
+    HighwaySign {
+      translation 0 0 0.66
+      name "highway sign(3)"
+      height 1.7
+      length 3.5
+      texture [
+        "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/traffic/protos/textures/highway_sign_sebastian.jpg"
+      ]
+    }
+  ]
+}
+HighwayPole {
+  translation -2200 16 0
+  name "highway pole(5)"
+  stand 2
+  height 7
+  length 31
+  thickness 0.35
+  curveRadius 0.5
+  rightHorizontalSigns [
+    HighwaySign {
+      translation 0 -5.35 0
+      texture [
+        "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/traffic/protos/textures/highway_sign_bayonne.jpg"
+      ]
+    }
+  ]
+  rightVerticalSigns [
+    HighwaySign {
+      translation 0 0 0.66
+      name "highway sign(1)"
+      height 1.7
+      length 3.5
+      texture [
+        "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/traffic/protos/textures/highway_sign_sebastian.jpg"
+      ]
+    }
+  ]
+  leftHorizontalSigns [
+    HighwaySign {
+      translation 0 17.5 0
+      name "highway sign(2)"
+      height 3.5
+      texture [
+        "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/traffic/protos/textures/highway_sign_bayonne.jpg"
+      ]
+    }
+  ]
+  leftVerticalSigns [
+    HighwaySign {
+      translation 0 0 0.66
+      name "highway sign(3)"
+      height 1.7
+      length 3.5
+      texture [
+        "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/traffic/protos/textures/highway_sign_sebastian.jpg"
+      ]
+    }
+  ]
+}
+HighwayPole {
+  translation -2600 16 0
+  name "highway pole(6)"
+  stand 2
+  height 7
+  length 31
+  thickness 0.35
+  curveRadius 0.5
+  rightHorizontalSigns [
+    HighwaySign {
+      translation 0 -5.35 0
+      texture [
+        "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/traffic/protos/textures/highway_sign_bayonne.jpg"
+      ]
+    }
+  ]
+  rightVerticalSigns [
+    HighwaySign {
+      translation 0 0 0.66
+      name "highway sign(1)"
+      height 1.7
+      length 3.5
+      texture [
+        "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/traffic/protos/textures/highway_sign_sebastian.jpg"
+      ]
+    }
+  ]
+  leftHorizontalSigns [
+    HighwaySign {
+      translation 0 17.5 0
+      name "highway sign(2)"
+      height 3.5
+      texture [
+        "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/traffic/protos/textures/highway_sign_bayonne.jpg"
+      ]
+    }
+  ]
+  leftVerticalSigns [
+    HighwaySign {
+      translation 0 0 0.66
+      name "highway sign(3)"
+      height 1.7
+      length 3.5
+      texture [
+        "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/traffic/protos/textures/highway_sign_sebastian.jpg"
+      ]
+    }
+  ]
+}
+HighwayPole {
+  translation -3000 16 0
+  name "highway pole(7)"
+  stand 2
+  height 7
+  length 31
+  thickness 0.35
+  curveRadius 0.5
+  rightHorizontalSigns [
+    HighwaySign {
+      translation 0 -5.35 0
+      texture [
+        "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/traffic/protos/textures/highway_sign_bayonne.jpg"
+      ]
+    }
+  ]
+  rightVerticalSigns [
+    HighwaySign {
+      translation 0 0 0.66
+      name "highway sign(1)"
+      height 1.7
+      length 3.5
+      texture [
+        "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/traffic/protos/textures/highway_sign_sebastian.jpg"
+      ]
+    }
+  ]
+  leftHorizontalSigns [
+    HighwaySign {
+      translation 0 17.5 0
+      name "highway sign(2)"
+      height 3.5
+      texture [
+        "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/traffic/protos/textures/highway_sign_bayonne.jpg"
+      ]
+    }
+  ]
+  leftVerticalSigns [
+    HighwaySign {
+      translation 0 0 0.66
+      name "highway sign(3)"
+      height 1.7
+      length 3.5
+      texture [
+        "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/traffic/protos/textures/highway_sign_sebastian.jpg"
+      ]
+    }
+  ]
+}
+Solid {
+  rotation -0.577349914474874 -0.5773499786187347 0.5773509144747258 2.0944
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.8 0.8 0.8
+        baseColorMap ImageTexture {
+          url [
+            "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/vehicles/worlds/textures/ground_grass.jpg"
+          ]
+        }
+        roughness 0.5
+        metalness 0
+        textureTransform TextureTransform {
+          scale 1500 43
+        }
+      }
+      geometry Extrusion {
+        crossSection [
+          60 0, 59 0.061558297, 58 0.24471742, 57 0.54496738, 56 0.95491503, 55 1.4644661, 54 2.0610737, 53 2.7300475, 52 3.454915, 51 4.2178277, 50 5, 49 5.7821723, 48 6.545085, 47 7.2699525, 46 7.9389263, 45 8.5355339, 44 9.045085, 43 9.4550326, 42 9.7552826, 41 9.9384417, 40 10, 39 9.9384417, 38 9.7552826, 37 9.4550326, 36 9.045085, 35 8.5355339, 34 7.9389263, 33 7.2699525, 32 6.545085, 31 5.7821723, 30 5, 29 4.2178277, 28 3.454915, 27 2.7300475, 26 2.0610737, 25 1.4644661, 24 0.95491503, 23 0.54496738, 22 0.24471742, 21 0.061558297, 20 0, -20 0, -21 0.061558297, -22 0.24471742, -23 0.54496738, -24 0.95491503, -25 1.4644661, -26 2.0610737, -27 2.7300475, -28 3.454915, -29 4.2178277, -30 5, -31 5.7821723, -32 6.545085, -33 7.2699525, -34 7.9389263, -35 8.5355339, -36 9.045085, -37 9.4550326, -38 9.7552826, -39 9.9384417, -40 10, -41 9.9384417, -42 9.7552826, -43 9.4550326, -44 9.045085, -45 8.5355339, -46 7.9389263, -47 7.2699525, -48 6.545085, -49 5.7821723, -50 5, -51 4.2178277, -52 3.454915, -53 2.7300475, -54 2.0610737, -55 1.4644661, -56 0.95491503, -57 0.54496738, -58 0.24471742, -59 0.061558297, -60 0
+        ]
+        spine [
+          0 0 0
+          0 0 5000
+        ]
+        beginCap FALSE
+        endCap FALSE
+        ccw FALSE
+        creaseAngle 1.1
+      }
+      castShadows FALSE
+    }
+  ]
+  name "solid(2)"
+}
+Forest {
+  rotation 0 0 1 -1.5707953071795862
+  treesFiles [
+    "forest/highway_overtake/1.forest"
+  ]
+  shape []
+  type "cherry tree"
+  minHeight 4
+  maxRadius 2.5
+  minRadius 1.5
+}
